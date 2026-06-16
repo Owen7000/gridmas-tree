@@ -3,7 +3,7 @@
 
 import csv
 import math
-from typing import Iterable, Union
+from typing import Iterable
 
 
 def save_lights(light_locs: list[list[int]]) -> None:
@@ -32,7 +32,7 @@ TWO_PI = PI*2
 TAU = PI * 2
 
 
-def clamp(val: Union[float, int], minv: Union[float, int], maxv: Union[float, int]):
+def clamp(val: float | int, minv: float | int, maxv: float | int):
     """Clamp a value between two values
 
         example:
