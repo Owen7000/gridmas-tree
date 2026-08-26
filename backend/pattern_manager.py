@@ -62,11 +62,11 @@ class PatternManager:
     """ Manages patterns for the tree
 
     The pattern manager is in charge of loading, parsing, storing and recalling pattern files
-    
+
     Warning:
         This module is intended for internal use only. You do not need to use any of this in your pattern code
     """
-    
+
     def __init__(self, pattern_dir: str):
         """__init__ Initialise the pattern manager
 
@@ -133,7 +133,7 @@ class PatternManager:
             except Exception as e:
                 print(f"Current pattern in draw_current:{self.currentPattern}")
                 print(e)
-                
+
                 self.generator = None
                 self.currentPattern = None
                 # print("There was an error", e)
@@ -145,7 +145,7 @@ class PatternManager:
 
         Args:
             name (str): _description_
-            
+
         Note:
             TODO fix so people cant just inject whatever name they want from client side :skull:
         """
@@ -154,14 +154,14 @@ class PatternManager:
         try:
             module = __import__("patterns." + name)
         except:
-            return 
-        
+            return
+
         pattern_module = getattr(module, name)
         importlib.reload(pattern_module)
 
         tempVar = self.patterns.get(name)
         if tempVar is None:
-            return    
+            return
         self.currentPattern = tempVar
 
         self.generator = None
@@ -172,7 +172,7 @@ class PatternManager:
 
         Reset the current pattern and generator variables to effectively restart the manager
         """
-        
+
         self.currentPattern = None
         self.generator = None
 
@@ -187,7 +187,7 @@ class PatternManager:
         Returns:
             code (str): Returns the python code of the pattern
         """
-        
+
         try:
             return self.patterns[name]
         except:
