@@ -144,8 +144,7 @@ class PatternManager:
         Load the pattern with a given name from the patterns directory
 
         Args:
-            name (str): _description_
-
+            name (str): The name of the Python module you want to load
         Note:
             TODO fix so people cant just inject whatever name they want from client side :skull:
         """
