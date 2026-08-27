@@ -136,7 +136,6 @@ class PatternManager:
 
                 self.generator = None
                 self.currentPattern = None
-                # print("There was an error", e)
 
     def load_pattern(self, name: str):
         """load_pattern Loads a pattern
