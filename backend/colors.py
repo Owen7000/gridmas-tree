@@ -7,7 +7,6 @@
 """
 
 import random
-import math
 import colorsys
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
