@@ -410,78 +410,97 @@ class Color:
         self.set_hsl(newh, s, v) # handles the changed and lerp reset
 
     def set_black(self):
+        """set_black Sets the color to black"""
         self._r, self._g, self._b = 0, 0, 0
         self._changed = True
 
     def set_red(self):
+        """set_red Sets the color to red"""
         self._r, self._g, self._b = 255, 0, 0
         self._changed = True
 
     def set_orange(self):
+        """set_orange Sets the color to orange"""
         self._r, self._g, self._b = 252, 81, 8
         self._changed = True
 
     def set_amber(self):
+        """set_amber Sets the color to amber"""
         self._r, self._g, self._b = 251, 136, 10
         self._changed = True
 
     def set_yellow(self):
+        """set_yellow Sets the color to yellow"""
         self._r, self._g, self._b = 234, 163, 8
         self._changed = True
 
     def set_lime(self):
+        """set_lime Sets the color to lime"""
         self._r, self._g, self._b = 107, 202, 3
         self._changed = True
 
     def set_green(self):
+        """set_green Sets the color to green"""
         self._r, self._g, self._b = 0, 255, 0
         self._changed = True
 
     def set_emerald(self):
+        """set_emerald Sets the color to emerald"""
         self._r, self._g, self._b = 23, 178, 106
         self._changed = True
 
     def set_teal(self):
+        """set_teal Sets the color to teal"""
         self._r, self._g, self._b = 23, 175, 150
         self._changed = True
 
     def set_cyan(self):
+        """set_cyan Sets the color to cyan"""
         self._r, self._g, self._b = 21, 170, 210
         self._changed = True
 
     def set_sky(self):
+        """set_sky Sets the color to sky"""
         self._r, self._g, self._b = 20, 146, 241
         self._changed = True
 
     def set_blue(self):
+        """set_blue Sets the color to blue"""
         self._r, self._g, self._b = 0, 0, 255
         self._changed = True
 
     def set_indigo(self):
+        """set_indigo Sets the color to indigo"""
         self._r, self._g, self._b = 78, 64, 255
         self._changed = True
 
     def set_violet(self):
+        """set_violet Sets the color to violet"""
         self._r, self._g, self._b = 122, 47, 255
         self._changed = True
 
     def set_purple(self):
+        """set_purple Sets the color to purple"""
         self._r, self._g, self._b = 155, 30, 255
         self._changed = True
 
     def set_fuchsia(self):
+        "set_fuchsia Sets the color to fuchsia"
         self._r, self._g, self._b = 215, 0, 250
         self._changed = True
 
     def set_pink(self):
+        """set_pink Sets the color to pink"""
         self._r, self._g, self._b = 240, 15, 137
         self._changed = True
 
     def set_rose(self):
+        """set_rose Sets the color to rose"""
         self._r, self._g, self._b = 251, 0, 69
         self._changed = True
 
     def set_white(self):
+        """set_white Sets the color to white"""
         self._r, self._g, self._b = 255, 255, 255
         self._changed = True
 
