@@ -206,7 +206,7 @@ class Color:
     @staticmethod
     def mix(a: "Color", b: "Color", x: float):
         """Mix two colors together
-        
+
         args:
             a: The first color
             b: The second color
@@ -238,7 +238,7 @@ class Color:
         return colorsys.rgb_to_hls(self._r, self._g, self._b)
 
     def to_bit_string(self) -> int:
-        """Return the color as an byte string integer, 
+        """Return the color as an byte string integer,
        int bitmap encoded as GGGGGGGGRRRRRRRRBBBBBBBB"""
         return (self._r << 8) | (self._g << 16) | self._b
 
@@ -246,7 +246,7 @@ class Color:
         """on Set the color to on
 
         Sets the color to the fully on state (white, RGB(255,255,255))
-        
+
         Examples:
             ```py
             my_color = Color.red() # Creates a new color that is red
@@ -263,7 +263,7 @@ class Color:
         """off Set the color to off
 
         Sets the color to the fully off state (black, RGB(0,0,0))
-        
+
         Examples:
             ```py
             my_color = Color.red() # Creates a new color that is red
@@ -284,7 +284,7 @@ class Color:
         Args:
             n (float, optional): Controls the speed of the fade. The larger the number, the faster it will fade. Values less than 1 cause the color to get brighter to a max color of white. Defaults to 1.1.
         """
-        
+
         self._r = int(clamp(self._r / n, 0, 255))
         self._g = int(clamp(self._g / n, 0, 255))
         self._b = int(clamp(self._b / n, 0, 255))
@@ -294,7 +294,7 @@ class Color:
 
     def lerp(self, target: "Color", n: int, override: bool = False, fn: Callable[[float], float] = linear):
         """Linearly interpolate the color from its current color to the target color over n frames.
-        
+
         Each successive call to lerp will advance the interpolation by a frame. After n amount of calls, it will be the target color. Any change to the target or frames amount will reset the interpolation from the current color. fn provides a way to choose an interpolation method, defaults to linear
 
         Examples:
@@ -310,7 +310,7 @@ class Color:
         """
 
         self.set_lerp(target, n, override, fn)
-  
+
     def lerp_reset(self):
         """lerp_reset Reset to lerp step 0
 
@@ -352,15 +352,15 @@ class Color:
         self._b = c._b
 
         self._changed = True
-        
+
     def set_color(self, c: "Color"):
         self._r = c._r
         self._g = c._g
         self._b = c._b
 
         self._changed = True
-    
-    def set_rgb(self, r: int, g: int, b: int):        
+
+    def set_rgb(self, r: int, g: int, b: int):
         """Set the red, green and blue values of the color, values between 0 and 255"""
         self._r = r & 0xff
         self._g = g & 0xff
@@ -546,7 +546,7 @@ class Pixel(Color):
         In the new architecture, this data is stored in separate numpy arrays in Tree
         To ensure compatability, override the getter/setters of rgb, xyz etc
         This trick means the code doesn't need migated, but still gets (most of) the performance
-        increase from the numpy array 
+        increase from the numpy array
     """
 
     """
