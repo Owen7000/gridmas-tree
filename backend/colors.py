@@ -661,6 +661,7 @@ class Pixel(Color):
                 right = mid
         return list(map(lambda x: x[0], self._tree._pixel_distance_matrix[self._id][:left]))
 
+
 def int2tuple(c: int) -> tuple[int, int, int]:
     """conver the 24bit encoded int to tuple of R, G, and B.
        int bitmap encoded as GGGGGGGGRRRRRRRRBBBBBBBB"""
@@ -672,11 +673,9 @@ def tuple2int(t: tuple[int, int, int]) -> int:
     """
     return (t[0] << 8) | (t[1] << 16) | t[2]
 
-
 def tuple2hex(t: tuple[int, int, int]) -> str:
     """Convert an RGB tuple to hex string """
     return '#%02x%02x%02x' % t
-
 
 def hex2tuple(h: str) -> tuple[int, int, int]:
     """Convert a hex string to an RGB tuple"""
