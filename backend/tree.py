@@ -22,7 +22,7 @@ class Tree():
     def init(self, tree_file: str):
         """For internal use
         Initialise / reset the tree"""
-        
+
         self._coords = read_tree_csv(tree_file)
         """The coordinates of all lights on the tree"""
 
@@ -45,7 +45,7 @@ class Tree():
         # this limits the tree to a single lerp function at once
         # but improves performance a lot
         self._lerp_fn = linear
-        
+
 
         self._pixels: list[Pixel] = [Pixel(i, self) for i in range(self._num_pixels)]
         """The list of all pixels on the tree"""
@@ -64,7 +64,7 @@ class Tree():
 
         self._last_update = time.perf_counter()
         """When the last update took place"""
-        
+
         self._render_times: list[float] = []
         """A list of the render times for frames"""
 
@@ -74,7 +74,7 @@ class Tree():
 
         self._shapes: list[Shape] = []
         """The list of shapes that the tree can draw"""
-        
+
         self._background = None
         self._fps = 45
 
@@ -152,7 +152,7 @@ class Tree():
         eased = self._lerp_fn(t)[:, None]
 
         self._rgb[idx] = np.clip(
-            (self._lerp_prev[idx] + (self._lerp_target[idx] - self._lerp_prev[idx]) * eased), 
+            (self._lerp_prev[idx] + (self._lerp_target[idx] - self._lerp_prev[idx]) * eased),
             0,
             255,
         ).astype(np.uint8)
@@ -176,7 +176,7 @@ class Tree():
         ]
 
 
-def height() -> float: 
+def height() -> float:
     """The height of the tree
 
     Examples:
@@ -246,7 +246,7 @@ def set_fps(fps: int):
         def draw():
             pass # called 30 times per second
         ```
-        
+
     """
     tree._fps = fps
 
@@ -380,7 +380,7 @@ def millis() -> int:
     """
     return math.floor((time.time() - tree._pattern_started_at) * 1000)
 
-    
+
 def _rotated_z(theta: float, alpha: float) -> np.ndarray:
     """Compute the rotated Z coordinate for every pixel at once.
 
