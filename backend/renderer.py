@@ -10,11 +10,11 @@ class Renderer:
     """ _summary_
 
     _extended_summary_
-    
+
     Warning:
         This module is intended for internal use only. You do not need to use any of this in your pattern code
     """
-    
+
     def __init__(self, coords: list[tuple[float, float, float]]):
         """__init__ Initialise the renderer
 
