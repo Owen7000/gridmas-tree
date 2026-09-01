@@ -79,7 +79,12 @@ class Tree():
         self._fps = 45
 
 
-    def _pattern_reset(self):
+    def _pattern_reset(self) -> None:
+        """_pattern_reset Reset the currently running pattern
+
+        Resets all the runtime data of a pattern.
+        Sets the start time to now, sets the frame to 0, clears the background and resets the frame rate back to 45
+        """
         self._pattern_started_at = time.time()
         self._frame = 0
         self._background = None
